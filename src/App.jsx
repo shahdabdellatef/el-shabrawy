@@ -547,7 +547,7 @@ const menuData = [
     ["فول ليمون معصفر", 30],
   ].map((item, i) =>
     product(
-      `box-${i}`,0
+      `box-${i}`,
       item[0],
       item[1],
       "boxes",
