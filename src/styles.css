@@ -1433,3 +1433,6 @@ body.light-mode
     transform: translateX(-34px);
   }
 }
+.meat-text {
+  color: var(--accent) !important;
+}

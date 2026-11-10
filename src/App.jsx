@@ -42,7 +42,8 @@ const product = (
   price,
   mainCategory,
   subCategory,
-  description = ""
+  description = "",
+  ingredients = ""
 ) => ({
   id,
   name,
@@ -50,6 +51,7 @@ const product = (
   mainCategory,
   subCategory,
   description,
+  ingredients,
 });
 
 // =====================================================
@@ -200,9 +202,9 @@ const menuData = [
   // =====================================================
 
   ...[
-    ["ساندوتش بطاطس محمرة", 18, 17],
-    ["ساندوتش بطاطس سادة", 18, 17],
-    ["ساندوتش بطاطس شيبسي", 18, 17],
+    ["ساندوتش بطاطس محمرة", 19, 18],
+    ["ساندوتش بطاطس سادة", 19, 18],
+    ["ساندوتش بطاطس شيبسي", 19, 18],
     ["ساندوتش بطاطس جمبري", 23, 22],
     ["ساندوتش بورية زيت", 19, 18],
     ["ساندوتش بورية زبدة", 18, 17],
@@ -233,7 +235,7 @@ const menuData = [
     ["ساندوتش بازوكا صوابع", 30, 29],
     ["ساندوتش بطاطس ثومية", 24, 23],
     ["ساندوتش بطاطس موتزاريلا", 26, 25],
-    ["ساندوتش بطاطس طحينة فقط", 18, 17],
+    ["ساندوتش بطاطس طحينة فقط", 19, 18],
     ["ساندوتش بطاطس ميكس جبن", 32, 31],
   ].map((item, i) =>
     sandwich(
@@ -248,7 +250,14 @@ const menuData = [
   // =====================================================
   // سندوتشات اللحوم
   // =====================================================
-
+  product(
+    "Shawerma",
+    "شاورما فراخ سوري",
+    95,
+    "meat-sandwiches",
+    "meat-sandwiches",
+    "سوري 95 / فينو 90"
+  ),
   product(
     "hawawshi",
     "حواوشي",
@@ -264,7 +273,7 @@ const menuData = [
     70,
     "meat-sandwiches",
     "meat-sandwiches",
-    "سوري 70 / فينو 70"
+    "سوري 85 / فينو 80"
   ),
 
   product(
@@ -287,52 +296,60 @@ const menuData = [
 
   product(
     "kofta-sandwich",
-    "س كفتة",
-    85,
+    " كفتة",
+    95,
     "meat-sandwiches",
     "meat-sandwiches",
-    "سوري 85 / فينو 85"
+    "سوري 95 / فينو 90"
   ),
 
   product(
     "sogok-sandwich",
-    "س سجق",
+    " سجق",
     65,
     "meat-sandwiches",
     "meat-sandwiches",
-    "سوري 70 / فينو 70"
+    "سوري 85 / فينو 80"
   ),
   product(
     "crispy-sandwich",
-    "س كريسبي",
-    85,
-    "meat-sandwiches",
-    "meat-sandwiches",
-    "سوري 85 / فينو 85"
-  ),
-  product(
-    "zinger-sandwich",
-    "س زنجر",
+    " كريسبي",
     95,
     "meat-sandwiches",
     "meat-sandwiches",
-    "سوري 95 / فينو 95"
+    "سوري 95 / فينو 90"
+  ),
+    product(
+    "sheesh-sandwich",
+    "تشيكن بانيه",
+    95,
+    "meat-sandwiches",
+    "meat-sandwiches",
+    "سوري 95 / فينو 90"
+  ),
+  product(
+    "zinger-sandwich",
+    "تشيكن زنجر",
+    95,
+    "meat-sandwiches",
+    "meat-sandwiches",
+    "سوري 95 / فينو 90"
   ),
   product(
     "sheesh-sandwich",
-    "س شيش",
-    85,
+    " شيش طاووك",
+    95,
     "meat-sandwiches",
     "meat-sandwiches",
-    "سوري 90 / فينو 90"
+    "سوري 95 / فينو 90"
   ),
   product(
     "faheta-sandwich",
-    "س فاهيتا",
-    90,
+    "فاهيتا فراخ ",
+    95,
     "meat-sandwiches",
     "meat-sandwiches",
-    "سوري 90 / فينو 90"
+    "سوري 95 / فينو 90"
   ),
   product(
     "monster-burger",
@@ -340,7 +357,8 @@ const menuData = [
     150,
     "meat-sandwiches",
     "meat-sandwiches",
-    "سنجل 150 / دبل 210"
+    "سنجل 150 / دبل 210",
+    "صوص برجر، خس، صوص باربكيو، لحم بيف بيكون، صوص جبنة، أصابع موزاريلا"
   ),
 
   product(
@@ -349,7 +367,8 @@ const menuData = [
     150,
     "meat-sandwiches",
     "meat-sandwiches",
-    "سنجل 150 / دبل 210"
+    "سنجل 150 / دبل 210",
+    "مايونيز، فلفل هالبينو، خس، بصل مكرمل، مشروم مكرمل، صوص جبنة"
   ),
 
   product(
@@ -358,7 +377,8 @@ const menuData = [
     130,
     "meat-sandwiches",
     "meat-sandwiches",
-    "سنجل 130 / دبل 180"
+    "سنجل 130 / دبل 180",
+    "خس، طماطم، صوص جبنة، بصل"
   ),
 
   product(
@@ -367,7 +387,8 @@ const menuData = [
     130,
     "meat-sandwiches",
     "meat-sandwiches",
-    "سنجل 130 / دبل 170"
+    "سنجل 130 / دبل 170",
+    "قطعة فراخ 150 جرام، صوص جبنة، خس، فلفل هالبينو، طماطم"
   ),
   // =====================================================
   // سندوتشات المنوعه 
@@ -561,20 +582,22 @@ const menuData = [
 
   ...[
     ["تشيكن بانيه", 120],
+    ["كوردن بلو", 120],
+    ["تشيكن زنجر", 120],
     ["تشيكن كريسبي", 120, "حار أو عادي"],
     ["تشيكن رانش", 120],
     ["شيش طاووق", 120],
     ["سوسيس", 90],
-    ["سجق", 90],
+    ["سجق", 100],
     ["كبدة", 90],
-    ["برجر", 110],
-    ["بسطرمة", 110],
+    ["برجر", 120],
+    ["بسطرمة", 120],
     ["وحش فراخ", 140],
     ["وحش لحوم", 140],
     ["ماهيتا فراخ", 130],
     ["شاورما فراخ", 120],
-    ["بطاطس", 70],
-    ["ميكس جبن", 95],
+    ["بطاطس", 75],
+    ["ميكس جبن", 100],
     ["نوتيلا", 75],
     ["نوتيلا ومكسرات", 85],
     ["لوتس", 75],
@@ -758,12 +781,12 @@ const mainCategories = [
   { id: "all", name: "الكل" },
   { id: "sandwiches", name: "سندوتشات" },
   { id: "meat-sandwiches", name: "سندوتشات لحوم" },
-  { id: "dishes", name: "أطباق" },
-  { id: "meals", name: "وجبات" },
-  { id: "falafel-disks", name: "أقراص الطعمية" },
-  { id: "crepe", name: "كريب" },
-  { id: "boxes", name: "علب" },
   { id: "syrian", name: "س رول سوري" },
+  { id: "crepe", name: "كريب" },
+  { id: "meals", name: "وجبات" },
+  { id: "dishes", name: "أطباق" },
+  { id: "falafel-disks", name: "أقراص الطعمية" },
+  { id: "boxes", name: "علب" },
   { id: "drinks", name: "مشروبات" },
 ];
 
@@ -1182,9 +1205,25 @@ function Menu({ onBack }) {
             <div className="item-info">
               <h2>{item.name}</h2>
 
-              {item.description && (
-                <p>{item.description}</p>
-              )}
+      {item.description && (
+        <p className={
+          item.mainCategory === "meat-sandwiches"
+            ? "product-description meat-text"
+            : "product-description"
+        }>
+          {item.description}
+        </p>
+      )}
+
+      {item.ingredients && (
+        <p className={
+          item.mainCategory === "meat-sandwiches"
+            ? "product-ingredients meat-text"
+            : "product-ingredients"
+        }>
+          المكونات: {item.ingredients}
+        </p>
+      )}
             </div>
 
             {/* بلدي / شامي */}
