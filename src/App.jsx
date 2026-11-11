@@ -7,14 +7,17 @@ import logo from "./assets/logo.png";
 // =====================================================
 
 const branches = [
-  "6 أكتوبر — 1004 الممشى السياحي، محور جمال عبد الناصر، داخل الجامعة الكندية",
-  "مدينة نصر — 12 عمارات راموسيتي ستار، داخل نادي الزهور",
-  "التجمع — داخل نادي الزهور",
-  "المعادي — رينج مول، بجوار نادي الصيد",
-  "مدينتي — كرافت زون، محل G25",
-  "شيراتون — داخل الأكاديمية البحرية",
-  "السعودية — أبها",
-  "مودرن أكاديمي — زهراء المعادي",
+  { text: "6 أكتوبر — 1004 الممشى السياحي، محور جمال عبد الناصر، داخل الجامعة الكندية" },
+  { text: "مدينة نصر — 12 عمارات راموسيتي ستار، داخل نادي الزهور" },
+  { text: "التجمع — داخل نادي الزهور" },
+  { text: "المعادي — رينج مول، بجوار نادي الصيد" },
+  { text: "مدينتي — كرافت زون، محل G25" },
+  { text: "شيراتون — داخل الأكاديمية البحرية" },
+  { text: "السعودية — أبها" },
+  {
+    text: "مودرن أكاديمي — زهراء المعادي",
+    opensMenu: true,
+  },
 ];
 
 // =====================================================
@@ -320,7 +323,7 @@ const menuData = [
     "سوري 95 / فينو 90"
   ),
     product(
-    "sheesh-sandwich",
+    "chicken-sandwich",
     "تشيكن بانيه",
     95,
     "meat-sandwiches",
@@ -899,20 +902,33 @@ function Home({ onMenu }) {
           تلاقينا في أقرب فرع ليك
         </p>
 
-        <div className="branches-grid">
-          {branches.map((branch, index) => (
-            <div
-              className="branch-card"
-              key={index}
-            >
+      <div className="branches-grid">
+        {branches.map((branch, index) => {
+          const content = (
+            <>
               <span className="branch-number">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <p>{branch}</p>
+              <p>{branch.text}</p>
+            </>
+          );
+
+          return branch.opensMenu ? (
+            <button
+              className="branch-card branch-link"
+              key={index}
+              onClick={onMenu}
+            >
+              {content}
+            </button>
+          ) : (
+            <div className="branch-card" key={index}>
+              {content}
             </div>
-          ))}
-        </div>
+          );
+        })}
+      </div>
       </section>
 
       <footer className="home-footer">

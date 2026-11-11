@@ -161,6 +161,7 @@ body.light-mode {
   align-items: center;
 
   justify-content: space-evenly;
+  background-color: #ed7b2f;
 
   color: white;
 
@@ -173,7 +174,6 @@ body.light-mode {
   font-weight: 800;
 
   cursor: pointer;
-  background-color: transparent;
   box-shadow:
     0 12px 30px rgba(214, 106, 34, 0.25);
 
@@ -1428,4 +1428,15 @@ body.light-mode
 }
 .meat-text {
   color: var(--accent) !important;
+}
+.branch-link {
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  width: 100%;
+  cursor: pointer;
+}
+
+.branch-link:hover .branch-number {
+  color: var(--accent-light);
 }
